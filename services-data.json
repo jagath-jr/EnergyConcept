@@ -1,0 +1,37 @@
+[
+  {
+    "id": "power-projects",
+    "title": "Power Projects",
+    "icon": "⚡",
+    "homePageDescription": "End-to-end high-voltage and extra high-voltage power solutions, including cabling, substations, testing, and system upgrades.",
+    "link": "services.html#power"
+  },
+  {
+    "id": "turbomachinery",
+    "title": "Turbomachinery Services",
+    "icon": "⚙️",
+    "homePageDescription": "Maintenance, overhaul, and performance enhancement services for gas and steam turbines and associated equipment.",
+    "link": "services.html#turbo"
+  },
+  {
+    "id": "scada-automation",
+    "title": "SCADA & Automation",
+    "icon": "🖥️",
+    "homePageDescription": "Design and integration of SCADA and automation systems for real-time monitoring and efficient power network control.",
+    "link": "services.html#scada"
+  },
+  {
+    "id": "testing-diagnostic",
+    "title": "Testing & Diagnostic",
+    "icon": "📊",
+    "homePageDescription": "Advanced testing and diagnostic solutions to ensure safety, reliability, and performance of electrical assets.",
+    "link": "services.html#testing"
+  },
+  {
+    "id": "equipment-supply",
+    "title": "Equipment Supply",
+    "icon": "🔌",
+    "homePageDescription": "Reliable supply of critical electrical equipment and spare parts to ensure uninterrupted industrial operations.",
+    "link": "services.html#supply"
+  }
+]
