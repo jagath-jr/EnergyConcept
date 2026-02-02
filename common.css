@@ -123,7 +123,7 @@ padding: 0 3rem;
 
 /* --- 5. MOBILE RESPONSIVE ANIMATION --- */
 @media (max-width: 768px) {
-  .navbar { padding: 1.5rem 15px; }
+  
   .menu-icon { display: block; }
 
   /* Mobile Menu Container */
