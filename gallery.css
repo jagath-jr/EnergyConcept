@@ -44,7 +44,7 @@ background: rgba(255, 255, 255, 0.74);
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   gap: 20px;
 }
 .gallery-item {
@@ -175,13 +175,19 @@ background: rgba(255, 255, 255, 0.74);
   .banner h2 {
 font-size: 4rem;
 }
+.gallery-grid {
+
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+}
+
 }
 .hero-content{
   background-color: #333;
   width:100vw;
 }
 .services-hero {
-    background-image: url('Home-img/SPlumbing Works.webp');
+    background-image: url('Gallery img/Gallery-Herosection.webp');
     background-size: cover;
     background-position: center;
     height: 50vh;

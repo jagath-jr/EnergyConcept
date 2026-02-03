@@ -19,19 +19,19 @@
       {
         "title": "Substation Design, Installation & Commissioning (up to 400kV)",
         "desc": "Complete substation solutions including engineering, installation, testing, and commissioning of GIS and AIS substations.",
-        "img": "Our service images/Substation Design Installation & Commissioning.webp",
+        "img": "Our service images/Substation Design, Installation & Commissioning (up to 400kV).webp",
         "alt": "Substation infrastructure"
       },
       {
         "title": "Switchgears, RMUs & Transformer Installation",
         "desc": "Installation and integration of switchgears, ring main units, and transformers for utility and industrial applications.",
-        "img": "Our service images/Switchgears RMUs & Transformer Installation.webp",
+        "img": "Our service images/Switchgears, RMUs & Transformer Installation.webp",
         "alt": "Switchgear and transformer units"
       },
       {
         "title": "High-Voltage Testing & Diagnostics (HVAC, PD Testing)",
         "desc": "Advanced testing services to assess utility and equipment health, detect faults, and ensure system reliability.",
-        "img": "Our service images/High-Voltage Testing & Diagnostics.webp",
+        "img": "Our service images/High-Voltage Testing & Diagnostics (HVAC, PD Testing).webp",
         "alt": "High voltage diagnostic testing"
       },
       {
@@ -56,13 +56,13 @@
       {
         "title": "Generator, Boiler & Auxiliary Systems Servicing",
         "desc": "Maintenance and servicing of generators, boilers, and supporting auxiliary systems.",
-        "img": "Our service images/Generator Boiler & Auxiliary Systems Servicing.webp",
+        "img": "Our service images/Generator, Boiler & Auxiliary Systems Servicing.webp",
         "alt": "Generator and boiler servicing"
       },
       {
         "title": "Turbine Upgrading, Revamping & Retrofitting",
         "desc": "Modernization of turbine systems to improve performance and mechanical life.",
-        "img": "Our service images/Turbine Upgrading Revamping & Retrofitting.webp",
+        "img": "Our service images/Turbine Upgrading, Revamping & Retrofitting.webp",
         "alt": "Turbine retrofit project"
       },
       {
@@ -117,7 +117,7 @@
       {
         "title": "RTU Supply, Configuration & Commissioning",
         "desc": "Supply and commissioning of RTUs for accurate data acquisition and remote system control.",
-        "img": "Our service images/RTU Supply Configuration & Commissioning.webp",
+        "img": "Our service images/RTU Supply, Configuration & Commissioning.webp",
         "alt": "RTU hardware configuration"
       },
       {
@@ -160,7 +160,7 @@
       {
         "title": "Transformer Oil Testing & Dissolved Gas Analysis (DGA)",
         "desc": "Analysis of transformer oil to assess internal health and support predictive maintenance.",
-        "img": "Our service images/Transformer Oil Testing & DGA.webp",
+        "img": "Our service images/Transformer Oil Testing & Dissolved Gas Analysis (DGA).webp",
         "alt": "Oil analysis laboratory"
       },
       {
@@ -179,7 +179,7 @@
       {
         "title": "Power Cables (LV, MV, HV up to 230kV)",
         "desc": "Supply of high-quality power cables meeting international standards for various applications.",
-        "img": "Our service images/Power Cables (LV MV HV up to 230kV).webp",
+        "img": "Our service images/Power Cables (LV, MV, HV up to 230kV).webp",
         "alt": "High voltage power cables"
       },
       {

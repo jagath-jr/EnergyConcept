@@ -15,15 +15,17 @@ body {
 }
 
 .services-hero {
-    background-image: url('Our service images/Our Services.webp');
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('Our service images/OurServices-HeroSection.webp');
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    background-blend-mode: darken; /* Optional - enhances the effect */
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .banner h2 {
     color: white;
@@ -34,7 +36,7 @@ body {
 .banner .caption {
     font-size: 3rem;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
 }

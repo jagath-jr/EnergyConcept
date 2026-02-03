@@ -161,10 +161,10 @@ body {
 
 /* Hero Section */
 .services-hero {
-    background-image: url('images/frameless.png');
+    background-image: url('images/AboutUs-Hero.webp');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,32 +1,28 @@
-/* --- Variables for Contact Page Scope --- */
+/* --- CSS Reset / Base (Scoped via prefix) --- */
 :root {
-    --cp-color-primary: #333333;
-    --cp-color-secondary: #666666;
-    --cp-color-accent-start: #dcbed1; /* Light Pinkish gradient start */
-    --cp-color-accent-end: #f4d3d3;   /* Light Peach gradient end */
-    --cp-btn-gradient-start: #5a5698; /* Purple */
-    --cp-btn-gradient-end: #d94652;   /* Red/Pink */
-    --cp-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --cp-spacing-md: 2rem;
-    --cp-spacing-lg: 4rem;
-    --cp-border-radius: 12px;
+    --cp-font-primary: 'Inter', 'Segoe UI', sans-serif;
+    --cp-color-text-dark: #1a1a1a;
+    --cp-color-text-gray: #666666;
+    --cp-card-gradient: linear-gradient(135deg, #f3eef5 0%, #fcecf0 100%);
+    --cp-btn-gradient: linear-gradient(180deg, #5369c7 0%, #d64c6b 100%);
+    --cp-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Base Layout --- */
-.contact-page {
-    font-family: var(--cp-font-family);
+.cp-main {
+    font-family: var(--cp-font-primary);
+    background-color: #ffffff;
     width: 100%;
     overflow-x: hidden;
-    color: var(--cp-color-primary);
 }
 
-.contact-page__container {
+.cp-container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
 }
 
-.contact-page__sr-only {
+/* Accessibility: Screen Reader Only */
+.cp-sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -34,273 +30,266 @@
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
     border: 0;
 }
 
 /* --- Hero Section --- */
-.contact-page__hero {
+.cp-hero {
     position: relative;
-    height: 300px;
+    height: 40vh;
+    min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://images.unsplash.com/photo-1512453979798-5ea904ac22d4?q=80&w=1600&auto=format&fit=crop'); /* Abu Dhabi Skyline Placeholder */
-    background-size: cover;
-    background-position: center;
-    margin-bottom: var(--cp-spacing-lg);
+    overflow: hidden;
 }
 
-.contact-page__hero-overlay {
+.cp-hero__bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    object-fit: cover;
     z-index: 1;
 }
 
-.contact-page__title {
-    position: relative;
+.cp-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darken image for text readability */
     z-index: 2;
+}
+
+.cp-hero__title {
+    position: relative;
+    z-index: 3;
     color: #fff;
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
-    margin: 0;
+    opacity: 0; /* JS will animate this */
+    transform: translateY(30px);
 }
 
 /* --- Info Cards Section --- */
-.contact-page__info-section {
-    margin-bottom: var(--cp-spacing-lg);
+.cp-info-section {
+    padding: 60px 0;
 }
 
-.contact-page__grid {
+.cp-info-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
-.contact-page__card {
-    /* Background Gradient */
-    background: linear-gradient(135deg, #efe6ee 0%, #fbe8e8 100%);
-    border-radius: var(--cp-border-radius);
-    padding: 2rem;
+/* Desktop: 3 columns */
+@media (min-width: 768px) {
+    .cp-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+.cp-card {
+    background: var(--cp-card-gradient);
+    border-radius: 16px;
+    padding: 30px 20px;
     display: flex;
-    align-items: center; 
-    gap: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--cp-shadow);
     transition: transform 0.3s ease;
+    opacity: 0; /* JS Animation initial state */
+    transform: translateY(30px);
 }
 
-.contact-page__card:hover {
+.cp-card:hover {
     transform: translateY(-5px);
 }
 
-/* Icon Styling: Gradient Circle with White Icon */
-.contact-page__icon-wrapper {
-    background: linear-gradient(135deg, #a49aba 0%, #e08f97 100%); 
-    width: 60px;
-    height: 60px;
+.cp-card__icon-wrapper {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(224, 143, 151, 0.3);
 }
 
-.contact-page__icon {
-    width: 24px;
-    height: 24px;
-    color: #ffffff;
-    stroke-width: 2;
+.cp-card__icon {
+    font-size: 1.2rem;
+    color: #8e7bb0; /* Matches the muted purple icon tone */
 }
 
-/* Text Content: Stacked Vertically */
-.contact-page__card-content {
+.cp-card__details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 
-.contact-page__card-title {
-    margin: 0 0 0.3rem 0;
+.cp-card__title {
     font-size: 1.1rem;
-    color: #555;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--cp-color-text-gray);
+    margin: 0 0 5px 0;
 }
 
-.contact-page__card-link,
-.contact-page__address {
-    font-style: normal;
-    text-decoration: none;
-    color: #777;
-    font-weight: 500;
+.cp-card__link,
+.cp-card__text {
     font-size: 0.95rem;
+    color: var(--cp-color-text-dark);
+    font-weight: 500;
+    text-decoration: none;
+    font-style: normal;
     line-height: 1.4;
-    display: block;
 }
 
-.contact-page__card-link:hover {
-    color: #d94652;
+/* --- Connect Section --- */
+.cp-connect-section {
+    padding-bottom: 80px;
 }
 
-/* --- Connect Section (Map & Form) --- */
-.contact-page__section-title {
+.cp-section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-weight: 500;
+    margin-bottom: 50px;
     color: #000;
-    font-weight: 600;
+    opacity: 0;
 }
 
-/* Container for Map and Form */
-.contact-page__split-layout {
-    display: flex;
-    flex-direction: column;
-    background: transparent; 
-    gap: 2rem; /* Gap between the two cards */
+.cp-connect-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: stretch;
 }
 
-/* Map Card */
-.contact-page__map-wrapper {
-    position: relative;
+@media (min-width: 992px) {
+    .cp-connect-grid {
+        grid-template-columns: 1fr 1.2fr; /* Map smaller, form larger */
+        gap: 50px;
+    }
+}
+
+/* Map Styling */
+.cp-map-wrapper {
     width: 100%;
-    min-height: 300px; /* Default mobile height */
-    background: #fff;
-    border-radius: var(--cp-border-radius);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    overflow: hidden; /* Rounds the corners of the image */
+    border-radius: 0; /* Design shows straight edges on map slices */
+    overflow: hidden;
+    min-height: 300px;
+    opacity: 0;
+    transform: translateX(-30px);
 }
 
-.contact-page__map-image {
+.cp-map-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    position: absolute; /* Ensures it fills the card exactly */
-    top: 0;
-    left: 0;
+    /* Create the collage effect visually using a mask or just object-position if strictly using one image */
+    object-position: center; 
 }
 
-/* Form Card */
-.contact-page__form-wrapper {
-    padding: 2rem;
+/* Form Styling */
+.cp-form-wrapper {
     background: #fff;
-    border-radius: var(--cp-border-radius);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 40px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    opacity: 0;
+    transform: translateX(30px);
 }
 
-.contact-page__form {
+.cp-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 20px;
 }
 
-.contact-page__form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+.cp-form__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
 }
 
-.contact-page__input-group {
-    display: flex;
-    flex-direction: column;
+@media (min-width: 600px) {
+    .cp-form__row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.cp-form__input,
+.cp-form__select,
+.cp-form__textarea {
     width: 100%;
-}
-
-.contact-page__input,
-.contact-page__select,
-.contact-page__textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #e1e5ee;
-    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--cp-color-text-dark);
     font-family: inherit;
-    font-size: 0.9rem;
-    color: #333;
-    background: #fff;
     transition: border-color 0.3s;
-    box-sizing: border-box; 
+    background-color: #fff;
 }
 
-.contact-page__input:focus,
-.contact-page__select:focus,
-.contact-page__textarea:focus {
+.cp-form__input:focus,
+.cp-form__select:focus,
+.cp-form__textarea:focus {
     outline: none;
-    border-color: #7a6aa6;
-    background-color: #fbfbfc;
+    border-color: #8e7bb0;
 }
 
-.contact-page__input::placeholder,
-.contact-page__textarea::placeholder {
-    color: #aab4c3;
+.cp-form__input::placeholder,
+.cp-form__textarea::placeholder {
+    color: #a0a0a0;
 }
 
-.contact-page__select {
-    color: #666;
+.cp-form__textarea {
+    resize: vertical;
+}
+
+/* Dropdown arrow fix */
+.cp-select-wrapper {
+    position: relative;
+}
+.cp-select-wrapper::after {
+    content: '\f107'; /* FontAwesome Chevron Down */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #a0a0a0;
+    font-size: 0.8rem;
+}
+.cp-form__select {
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239facbf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
     cursor: pointer;
 }
 
-.contact-page__submit-btn {
-    background: linear-gradient(90deg, var(--cp-btn-gradient-start), var(--cp-btn-gradient-end));
+/* Submit Button */
+.cp-btn-submit {
+    background: var(--cp-btn-gradient);
     color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: opacity 0.3s, transform 0.2s;
-    margin-top: 0.5rem;
-    text-transform: capitalize;
-    box-shadow: 0 4px 6px rgba(90, 86, 152, 0.2);
+    transition: opacity 0.3s;
+    margin-top: 10px;
 }
 
-.contact-page__submit-btn:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
-}
-
-/* --- Media Queries --- */
-@media (min-width: 768px) {
-    .contact-page__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .contact-page__form-row {
-        flex-direction: row;
-    }
-    
-    .contact-page__input-group {
-        flex: 1;
-    }
-}
-
-@media (min-width: 1024px) {
-    .contact-page__split-layout {
-        flex-direction: row;
-        align-items: stretch; /* Forces equal height for Map and Form */
-        gap: 2rem; /* Gap between Map and Form on Desktop */
-    }
-
-    .contact-page__map-wrapper {
-        flex: 1;
-        min-height: auto; /* Allow it to respect stretch */
-    }
-
-    .contact-page__form-wrapper {
-        flex: 1;
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.cp-btn-submit:hover {
+    opacity: 0.9;
 }
