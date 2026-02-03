@@ -306,6 +306,7 @@
     background-color: #f9f9fa;
     font-family: 'Segoe UI', Roboto, sans-serif;
     overflow: hidden; /* Prevents scrollbar flashes */
+    opacity: 1;
 }
 
 .serv-mod__container {
@@ -342,7 +343,7 @@
 }
 
 .serv-mod__intro-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -480,9 +481,9 @@
 
     .serv-mod__card {
         /* Cards take up 85% of screen width */
-        min-width: 85vw;
+        min-width: 80vw;
         scroll-snap-align: center;
-        margin-right: 1rem;
+       
     }
 
     .serv-mod__swipe-hint {
