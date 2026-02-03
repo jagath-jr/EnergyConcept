@@ -123,7 +123,7 @@ padding: 0 3rem;
 
 /* --- 5. MOBILE RESPONSIVE ANIMATION --- */
 @media (max-width: 768px) {
-  .navbar { padding: 1.5rem 15px; }
+  
   .menu-icon { display: block; }
 
   /* Mobile Menu Container */
@@ -195,7 +195,7 @@ padding: 0 3rem;
     position: relative;
     width: 100%;
     /* Background Image Placeholder - Replace URL if needed */
-    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144&auto=format&fit=crop'); 
+    background-image: url('images/FooterImg.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
