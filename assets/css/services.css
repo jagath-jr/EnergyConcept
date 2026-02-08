@@ -17,7 +17,7 @@ body {
 .services-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/Our service images/OurServices-HeroSection.webp');
+        url('../images/our-service-images/ourservices-herosection.webp');
     background-size: cover;
     background-position: center;
     background-blend-mode: darken; /* Optional - enhances the effect */
