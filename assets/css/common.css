@@ -195,7 +195,7 @@ padding: 0 3rem;
     position: relative;
     width: 100%;
     /* Background Image Placeholder - Replace URL if needed */
-    background-image: url('images/FooterImg.webp'); 
+    background-image: url('../images/footerimg.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

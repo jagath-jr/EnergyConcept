@@ -1,10 +1,10 @@
 const localGalleryImages = [
-  { url: "Gallery img/Gallery-Img1.webp", caption: "" },
-    { url: "Gallery img/Gallery-Img2.webp", caption: "" },
-    { url: "Gallery img/Gallery-Img3.webp", caption: "" },
-    { url: "Gallery img/Gallery-Img4.webp", caption: "" },
-    { url: "Gallery img/Gallery-Img5.webp", caption: "" },
-    { url: "Gallery img/Gallery-Img6.webp", caption: "" }
+  { url: "assets/images/gallery-img/gallery-img1.webp", caption: "" },
+    { url: "assets/images/gallery-img/gallery-img2.webp", caption: "" },
+    { url: "assets/images/gallery-img/gallery-img3.webp", caption: "" },
+    { url: "assets/images/gallery-img/gallery-img4.webp", caption: "" },
+    { url: "assets/images/gallery-img/gallery-img5.webp", caption: "" },
+    { url: "assets/images/gallery-img/gallery-img6.webp", caption: "" }
   // Add more fallback images
 ];
 
