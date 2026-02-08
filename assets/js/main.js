@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // 1. Fetch Data
-            const response = await fetch('services-data.json');
+            const response = await fetch('assets/data/services-data.json');
             if (!response.ok) throw new Error('Failed to fetch services');
             const servicesData = await response.json();
 
