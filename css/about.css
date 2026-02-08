@@ -161,7 +161,7 @@ body {
 
 /* Hero Section */
 .services-hero {
-    background-image: url('images/AboutUs-Hero.webp');
+    background-image: url('../images/AboutUs-Hero.webp');
     background-size: cover;
     background-position: center;
     height: 40vh;
