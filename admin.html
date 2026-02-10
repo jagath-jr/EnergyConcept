@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Panel - Energy Concept</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <h1>Admin Panel</h1>
+      <p>Manage website content without code changes.</p>
+      <div class="login-card" id="loginCard">
+        <h2>Secure Login</h2>
+        <label for="user">Username</label>
+        <input id="user" placeholder="Enter username">
+        <label for="pass">Password</label>
+        <input id="pass" type="password" placeholder="Enter password">
+        <button id="loginBtn">Login</button>
+        <small>Default: admin / admin123</small>
+      </div>
+
+      <nav id="navTabs" class="hidden">
+        <button data-tab="global">Common Details</button>
+        <button data-tab="home">Home Page</button>
+        <button data-tab="about">About / Certifications</button>
+        <button data-tab="services">Services</button>
+        <button data-tab="gallery">Gallery</button>
+        <button data-tab="projects">Projects</button>
+        <button data-tab="careers">Careers</button>
+        <button data-tab="contact">Contact Page</button>
+      </nav>
+    </aside>
+
+    <main class="admin-content hidden" id="app">
+      <header class="content-header">
+        <h2 id="tabTitle">Dashboard</h2>
+        <div class="actions">
+          <button id="saveBtn" class="success">Save Changes</button>
+          <button id="undoBtn" class="secondary">Undo Last</button>
+        </div>
+      </header>
+
+      <section class="card" id="editor"></section>
+
+      <section class="card">
+        <h3>Previous Saved Snapshot</h3>
+        <p>This helps you compare old data before editing.</p>
+        <pre id="oldView"></pre>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/cms-runtime.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

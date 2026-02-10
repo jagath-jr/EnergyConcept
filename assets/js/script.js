@@ -1,3 +1,9 @@
+
+function getCmsGalleryImages() {
+  if (!window.ECCMS || !window.ECCMS.getCmsData) return [];
+  const imgs = window.ECCMS.getCmsData()?.gallery?.images || [];
+  return imgs.map(i => ({ url: i.url, caption: i.title || i.caption || '' }));
+}
 const localGalleryImages = [
   { url: "assets/images/gallery-img/gallery-img1.webp", caption: "" },
     { url: "assets/images/gallery-img/gallery-img2.webp", caption: "" },
@@ -9,6 +15,11 @@ const localGalleryImages = [
 ];
 
 async function initializeGallery() {
+  const cmsImages = getCmsGalleryImages();
+  if (cmsImages.length) {
+    displayGalleryImages(cmsImages);
+    return;
+  }
   try {
     await getBearerToken();
     const apiImages = await getGalleryImagesFromAPI();
