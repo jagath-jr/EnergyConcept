@@ -1,0 +1,54 @@
+{
+  "globalFooter": {
+    "companyPhone": "+1 555-0000",
+    "companyEmail": "hello@energyconcept.com",
+    "physicalAddress": "123 Business Street, City",
+    "socialLinks": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "x": ""
+    }
+  },
+  "homePage": {
+    "hero": {
+      "headline": "Powering Digital Growth",
+      "subtext": "We build reliable digital solutions for modern businesses.",
+      "buttonText": "Get Started",
+      "buttonLink": "/contacts.html"
+    },
+    "ourServices": [
+      {
+        "title": "Web Development",
+        "shortDescription": "Fast and scalable websites.",
+        "icon": "bi-code-slash"
+      }
+    ],
+    "contactInfoPanel": {
+      "phone": "+1 555-0000",
+      "email": "hello@energyconcept.com",
+      "address": "123 Business Street, City"
+    }
+  },
+  "aboutPage": {
+    "certifications": []
+  },
+  "servicesPage": {
+    "serviceCategories": []
+  },
+  "galleryPage": {
+    "albums": []
+  },
+  "projectsPage": {
+    "projects": []
+  },
+  "careersPage": {
+    "jobs": []
+  },
+  "contactPage": {
+    "phone": "+1 555-0000",
+    "email": "hello@energyconcept.com",
+    "address": "123 Business Street, City",
+    "mapEmbedCode": ""
+  }
+}

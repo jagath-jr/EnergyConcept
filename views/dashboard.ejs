@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/admin">CMS Dashboard</a>
+      <form action="/admin/logout" method="post">
+        <button class="btn btn-outline-light btn-sm" type="submit">Logout</button>
+      </form>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <% if (error && error.length) { %>
+      <div class="alert alert-danger"><%= error[0] %></div>
+    <% } %>
+    <% if (success && success.length) { %>
+      <div class="alert alert-success"><%= success[0] %></div>
+    <% } %>
+
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h2 class="h5">Content Manager</h2>
+            <p class="text-muted">Manage all page sections: home, about, services, gallery, projects, careers, and contact.</p>
+            <a class="btn btn-primary mt-auto" href="/admin/content">Open Content Manager</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h2 class="h5">History & Undo</h2>
+            <p class="text-muted">View previous snapshots and undo the latest content change.</p>
+            <a class="btn btn-outline-primary mt-auto" href="/admin/history">Open History</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h2 class="h5">Public API</h2>
+            <p class="text-muted">Use this endpoint in your frontend to load dynamic content.</p>
+            <a class="btn btn-outline-secondary mt-auto" href="/api/content" target="_blank">View /api/content</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
