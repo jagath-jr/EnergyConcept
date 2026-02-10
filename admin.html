@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Admin Panel</title><link rel='stylesheet' href='assets/css/admin.css'></head>
+<body><div class='admin-wrap'>
+  <div id='loginCard' class='card'><h2>Admin Login</h2><input id='user' placeholder='Username'><input id='pass' type='password' placeholder='Password'><button id='loginBtn'>Login</button><p class='small'>Default: admin / admin123 (change in code)</p></div>
+  <div id='app' class='hidden'>
+    <div class='card'><h2>Dashboard</h2><div class='grid'><button data-tab='global'>Global/Footer</button><button data-tab='home'>Home</button><button data-tab='about'>About</button><button data-tab='services'>Services</button><button data-tab='gallery'>Gallery</button><button data-tab='projects'>Projects</button><button data-tab='careers'>Careers</button><button data-tab='contact'>Contact</button></div></div>
+    <div class='card'><h3 id='tabTitle'>Editor</h3><div id='editor'></div><div class='row'><button id='saveBtn' class='success'>Save</button><button id='undoBtn' class='secondary'>Undo Last Change</button></div><p class='small'>Old snapshot (before current edits):</p><pre id='oldView' class='small'></pre></div>
+  </div>
+</div>
+<script src='assets/js/cms-runtime.js'></script><script src='assets/js/admin.js'></script></body></html>

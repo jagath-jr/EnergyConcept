@@ -43,6 +43,7 @@
 
     <script src="assets/js/main.js"></script>
       <script src="assets/js/common.js"></script>
+  <script src="assets/js/cms-runtime.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -59,13 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const mainContainer = document.getElementById('dynamic-content');
 
-    // Fetch Data
-    fetch('assets/data/services.json')
-        .then(res => {
-            if (!res.ok) throw new Error('Network response was not ok');
-            return res.json();
-        })
-        .then(data => {
+    // Fetch Data (prefer admin-managed content when available)
+    const cmsData = (window.ECCMS && window.ECCMS.getCmsData) ? window.ECCMS.getCmsData() : null;
+    const cmsServices = cmsData?.services?.categories;
+    const sourcePromise = (Array.isArray(cmsServices) && cmsServices.length)
+      ? Promise.resolve(cmsServices.map(c => ({ id: c.id || c.mainService?.toLowerCase().replace(/\s+/g,'-'), mainService: c.mainService || c.title, mainDescription: c.mainDescription || c.description || '', subParts: c.subServices || [] })))
+      : fetch('assets/data/services.json').then(res => { if (!res.ok) throw new Error('Network response was not ok'); return res.json(); });
+
+    sourcePromise.then(data => {
             // Render HTML
             data.forEach((serviceGroup, index) => {
                 // HERE IS THE CHANGE: added id="${serviceGroup.id}" to the section tag

@@ -85,6 +85,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/common.js"></script>
+  <script src="assets/js/cms-runtime.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -102,9 +103,10 @@
       const vacanciesList = document.getElementById('vacancies-list');
       if (!vacanciesList) return;
 
-      fetch('assets/data/job-vacancies.json')
-        .then(response => response.json())
-        .then(vacancies => {
+      const cmsJobs = window.ECCMS?.getCmsData()?.careers?.jobs;
+      const vacanciesPromise = (Array.isArray(cmsJobs) && cmsJobs.length) ? Promise.resolve(cmsJobs) : fetch('assets/data/job-vacancies.json').then(response => response.json());
+
+      vacanciesPromise.then(vacancies => {
           if (vacancies.length === 0) {
             vacanciesList.innerHTML = '<p style="text-align:center;">There are no current openings at this time. Please check back later or submit a general application below.</p>';
             return;
