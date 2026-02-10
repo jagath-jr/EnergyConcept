@@ -1,4 +1,5 @@
-const localGalleryImages = [
+const cmsGallery = window.CMS ? (window.CMS.getData().gallery || []) : [];
+const localGalleryImages = cmsGallery.length ? cmsGallery.map(item => ({ url: item.url, caption: item.title || "" })) : [
   { url: "assets/images/gallery-img/gallery-img1.webp", caption: "" },
     { url: "assets/images/gallery-img/gallery-img2.webp", caption: "" },
     { url: "assets/images/gallery-img/gallery-img3.webp", caption: "" },
@@ -36,7 +37,7 @@ function displayGalleryImages(images) {
     innerHTML += `
       <div class="gallery-item" data-aos="fade-up">
         <label for="img-modal-${i}">
-          <img src="${img.url}" alt="Gallery Image" />
+          <img src="${img.url}" alt="${img.alt || "Gallery Image"}" />
           <div class="caption">${img.caption}</div>
         </label>
       </div>
@@ -45,7 +46,7 @@ function displayGalleryImages(images) {
         <label for="img-modal-${i}" class="overlay"></label>
         <div class="modal-content-box">
           <label for="img-modal-${i}" class="close-btn">&times;</label>
-          <img src="${img.url}" alt="Popup Image" />
+          <img src="${img.url}" alt="${img.alt || "Popup Image"}" />
           <p class="modal-caption">${img.caption}</p>
         </div>
       </div>

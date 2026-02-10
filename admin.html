@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="assets/css/admin.css" />
+</head>
+<body>
+  <main class="admin-wrap">
+    <section id="loginView" class="card">
+      <h1>Admin Login</h1>
+      <input id="username" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <p class="hint">Default: admin / Admin@123</p>
+      <p id="loginError" class="error"></p>
+    </section>
+
+    <section id="panelView" class="hidden">
+      <header class="topbar">
+        <h1>Content Admin Dashboard</h1>
+        <div>
+          <button id="undoBtn">Undo Last Save</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </header>
+      <div class="grid">
+        <button class="nav" data-tab="global">Global/Footer</button>
+        <button class="nav" data-tab="home">Home</button>
+        <button class="nav" data-tab="services">Services Page</button>
+        <button class="nav" data-tab="about">About Certifications</button>
+        <button class="nav" data-tab="gallery">Gallery</button>
+        <button class="nav" data-tab="projects">Projects</button>
+        <button class="nav" data-tab="careers">Careers</button>
+        <button class="nav" data-tab="contact">Contact Page</button>
+      </div>
+      <pre id="oldState"></pre>
+      <section id="editor"></section>
+      <button id="saveBtn">Save Changes</button>
+      <p id="saveMsg"></p>
+    </section>
+  </main>
+  <script src="assets/js/cms.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

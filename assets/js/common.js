@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const html = await response.text();
             footerContainer.innerHTML = html;
+            if (window.CMS && typeof window.CMS.applyFooter === "function") { window.CMS.applyFooter(footerContainer); }
 
         } catch (err) {
             console.error('Error loading footer, using fallback:', err);
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="copyright">© ${new Date().getFullYear()} Energy Concepts. All rights reserved.</p>
                 </div>
             `;
+            if (window.CMS && typeof window.CMS.applyFooter === "function") { window.CMS.applyFooter(footerContainer); }
         } finally {
             // Run animations after content is loaded
             initializeFooterAnimations();
