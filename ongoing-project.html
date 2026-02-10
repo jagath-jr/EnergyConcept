@@ -27,6 +27,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/common.js"></script>
+  <script src="assets/js/cms-runtime.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -43,9 +44,10 @@
       const container = document.getElementById('project-container-main');
       if (!container) return;
 
-      fetch('assets/data/ongoing-project-data.json')
-        .then(response => response.json())
-        .then(projects => {
+      const cmsProjects = window.ECCMS?.getCmsData()?.projects?.items;
+      const projectsPromise = (Array.isArray(cmsProjects) && cmsProjects.length) ? Promise.resolve(cmsProjects) : fetch('assets/data/ongoing-project-data.json').then(response => response.json());
+
+      projectsPromise.then(projects => {
           let allProjectsHtml = '';
           
           if (projects.length === 0) {
@@ -65,7 +67,7 @@
                     </li>
                     <li>
                       <span>Main Contractor:</span>
-                      <strong>${project.mainContractor}</strong>
+                      <strong>${project.mainContractor || project.category || '-'}</strong>
                     </li>
                   </ul>
                 </div>
